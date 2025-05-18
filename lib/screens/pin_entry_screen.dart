@@ -108,7 +108,6 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
       }
     });
     
-    // Auto-verify when 4 digits are entered
     if (_enteredPin.length == 4) {
       _verifyPin();
     }
@@ -169,11 +168,9 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
       final secureStorage = Provider.of<SecureStorageService>(context, listen: false);
       final notesService = Provider.of<NotesService>(context, listen: false);
       
-      // Reset PIN and clear notes
       await secureStorage.resetApp();
       await notesService.clearAllNotes();
       
-      // Navigate to PIN setup screen
       if (mounted) {
         Navigator.pushReplacementNamed(context, 'pin_setup');
       }

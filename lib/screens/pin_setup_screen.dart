@@ -1,4 +1,3 @@
-// lib/screens/pin_setup_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/secure_storage.dart';
@@ -123,11 +122,9 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
     if (_isConfirming) {
       if (_confirmPin == _enteredPin) {
         try {
-          // PIN matches, save it
           final secureStorage = Provider.of<SecureStorageService>(context, listen: false);
           await secureStorage.setupPIN(_enteredPin);
           
-          // Navigate to notes list
           if (mounted) {
             Navigator.pushReplacementNamed(context, 'notes_list');
           }

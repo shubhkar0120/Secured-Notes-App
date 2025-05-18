@@ -21,7 +21,6 @@ class _NotesListScreenState extends State<NotesListScreen> {
   void initState() {
     super.initState();
     
-    // Check if the user is authenticated
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final secureStorage = Provider.of<SecureStorageService>(context, listen: false);
       if (!secureStorage.isAuthenticated()) {

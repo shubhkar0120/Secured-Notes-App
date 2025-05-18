@@ -1,4 +1,3 @@
-// lib/widgets/confirm_dialog.dart
 import 'package:flutter/material.dart';
 
 class ConfirmDialog extends StatelessWidget {
@@ -39,7 +38,6 @@ class ConfirmDialog extends StatelessWidget {
     );
   }
 
-  // Helper method to show this dialog
   static Future<bool?> show({
     required BuildContext context,
     required String title,

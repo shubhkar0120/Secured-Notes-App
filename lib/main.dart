@@ -15,18 +15,16 @@ import 'utils/theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // Force portrait orientation
+  
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
   
-  // Initialize services
   final secureStorage = SecureStorageService(FlutterSecureStorage());
   final prefs = await SharedPreferences.getInstance();
   final notesService = NotesService(prefs);
   
-  // Check if PIN is already set
   final hasPIN = await secureStorage.hasPIN();
   
   runApp(
@@ -41,7 +39,7 @@ void main() async {
   );
 }
 
-// Added the SecureNotesApp class definition
+
 class SecureNotesApp extends StatelessWidget {
   final String initialScreen;
   

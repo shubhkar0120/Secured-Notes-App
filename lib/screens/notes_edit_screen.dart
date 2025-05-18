@@ -120,7 +120,7 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
   }
 
   Future<void> _saveNote() async {
-    // Validate the form
+
     if (_formKey.currentState?.validate() != true) {
       return;
     }
@@ -130,10 +130,9 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
     final content = _contentController.text.trim();
     
     if (_isEditing) {
-      // Update existing note
+ 
       await notesService.updateNote(widget.noteId!, title, content);
     } else {
-      // Create new note
       await notesService.addNote(title, content);
     }
     
@@ -143,7 +142,7 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
   }
 
   Future<void> _handleBack() async {
-    // Check if changes were made
+    
     final notesService = Provider.of<NotesService>(context, listen: false);
     final title = _titleController.text.trim();
     final content = _contentController.text.trim();
@@ -163,8 +162,7 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
       Navigator.pop(context);
       return;
     }
-    
-    // Confirm discarding changes
+
     final result = await ConfirmDialog.show(
       context: context,
       title: 'Discard Changes',

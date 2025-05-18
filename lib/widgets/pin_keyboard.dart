@@ -1,4 +1,3 @@
-// lib/widgets/pin_keyboard.dart
 import 'package:flutter/material.dart';
 
 class PinKeyboard extends StatelessWidget {

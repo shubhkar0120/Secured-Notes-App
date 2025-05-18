@@ -14,7 +14,6 @@ class Note {
     required this.updatedAt,
   });
 
-  // Create a new note
   factory Note.create({required String title, required String content}) {
     final now = DateTime.now();
     return Note(
@@ -26,7 +25,7 @@ class Note {
     );
   }
 
-  // Convert to JSON
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -37,7 +36,6 @@ class Note {
     };
   }
 
-  // Create from JSON
   factory Note.fromJson(Map<String, dynamic> json) {
     return Note(
       id: json['id'],
@@ -48,7 +46,6 @@ class Note {
     );
   }
 
-  // Create a copy of this note with modified fields
   Note copyWith({
     String? title,
     String? content,
